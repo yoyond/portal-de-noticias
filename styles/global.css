@@ -1,6 +1,6 @@
 * {
-    padding: 0;
     margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
@@ -12,21 +12,25 @@
     --text-color-primary: #F1F5F9;
     --text-color-secondary: #CBD5E1;
 
-    --font-family: "Archivo", sans-serif;
+    --font-family: 'Archivo', sans-serif;
     --h1: 800 24px/135% var(--font-family);
     --h2: 800 16px/140% var(--font-family);
-    --h3: 800 16px/140% var(--font-family);
+    --h3: 800 14px/140% var(--font-family);
     --text-span: 600 14px/145% var(--font-family);
     --text: 400 16px/140% var(--font-family);
     --text-sm: 400 14px/160% var(--font-family);
-
-
 }
 
 body {
     font: var(--text);
     color: var(--text-color-primary);
     background-color: var(--bg-color);
+
+    transform: scale(0.8); 
+    transform-origin: top left;
+    width: 125%; /* Fiz isso para ajustar a escala do projeto a fim de normalizar a exibiçao a 100%zoom */
+    max-height: 250vh; /*isso ajusta a area visivel*/
+    
 }
 
 a {
@@ -38,7 +42,9 @@ a:hover {
     color: var(--brand-color-light);
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     font: inherit;
 }
 
@@ -54,7 +60,25 @@ img {
 
 main {
     margin-block: 40px;
+    row-gap: 80px;
+    column-gap: 32px;
+
+    grid-template-columns: 2fr 1.4fr;
+
+    grid-template-areas:
+        "featured featured"
+        "weekly weekly"
+        "ai aside";
 }
 
-
-
+.content-tag {
+    display: inline-block;
+    background-color: var(--brand-color-dark);
+    padding: 4px 8px;
+    border-radius: 4px;
+    font: 500 10px/1.2 var(--font-family);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--text-color-primary);
+    box-shadow: 0px 4px 16px rgba(2, 6, 23, 0.251);
+}
